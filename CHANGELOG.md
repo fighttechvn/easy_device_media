@@ -1,3 +1,8 @@
+# Release 1.0
+
+## 1.0.2
++ Upgrade library `image_picker: ^1.2.2`
+
 ## 1.0.1
 + Upgrade `image_cropper: ^8.0.2` 
 + Build flutter 3.24.1

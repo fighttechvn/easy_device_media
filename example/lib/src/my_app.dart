@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Center(
           child: Column(
             children: <Widget>[
@@ -89,12 +90,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: const Text('Pick Video'),
               ),
-        
-               Text(_path),
-              if (_path.isNotEmpty)
-                _path.contains('blob')
-                    ? Image.asset(_path)
-                    : Image.file(getFile(_path)),
+              Text(_path),
+              if ((_path.endsWith('.mov') == false) && _path.isNotEmpty)
+                Container(
+                  constraints: BoxConstraints(
+                      maxHeight: MediaQuery.sizeOf(context).height * 0.5),
+                  child:  _path.contains('blob')
+                      ? Image.asset(_path)
+                      : Image.file(getFile(_path)),
+                )
             ],
           ),
         ),
